@@ -1,0 +1,22 @@
+name: Guard: no macOS metadata
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fail if macOS metadata files are present
+        run: |
+          set -euo pipefail
+          bad="$(git ls-files | grep -E '(^|/)\.DS_Store$|(^|/)\._[^/]+$|(^|/)Icon$|(^|/)\.AppleDouble$' || true)"
+          if [ -n "$bad" ]; then
+            echo "Found disallowed macOS metadata files:"
+            echo "$bad"
+            echo "::error::Remove these files and ensure .gitignore contains patterns for .DS_Store, ._* , Icon, .AppleDouble"
+            exit 1
+          fi
+          echo "No macOS metadata files detected."
