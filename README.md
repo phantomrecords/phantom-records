@@ -16,10 +16,10 @@ Michael's work appears, without credit, in Amazon.com patent documents and elsew
 
 This is not a community repo. This is a published, timestamped ledger of innovation authored by one person—and backed by a legal and artistic history.
 
-## 🌐 Visit the Originals:
+## 🌐 Visit these related Official Websites:
 
-- https://phantomrecords.com  
-- https://phantom-records.com
+- https://phantom-records.store/ 
+- https://djx.vegas/
 
 ---
 
